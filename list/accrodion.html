@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion</title>
+    <link rel="stylesheet" href="accrodian.css">
+</head>
+
+<body>
+
+    <div class="accordion">
+        <div class="contentbox">
+            <div class="label">Accordion 1</div>
+            <div class="content-body">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur veniam sapiente fugiat consectetur
+                        quae dolorum ea, eaque tempora explicabo enim debitis sit vero doloremque nulla perspiciatis facili
+                        tempore qui aperiam.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contentbox">
+            <div class="label">Accordion 2</div>
+            <div class="content-body">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur veniam sapiente fugiat consectetur
+                        quae dolorum ea, eaque tempora explicabo enim debitis sit vero doloremque nulla perspiciatis facili
+                        tempore qui aperiam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolor esse quia, ipsam iure quae similique magni perferendis neque consequatur reiciendis quisquam dolorem, non exercitationem quibusdam. Quia repellat non aut?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contentbox">
+            <div class="label">Accordion Actions</div>
+            <div class="content-body">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur veniam sapiente fugiat consectetur
+                        quae dolorum ea, eaque tempora explicabo enim debitis sit vero doloremque nulla perspiciatis facili
+                        tempore qui aperiam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus fugiat distinctio architecto consectetur nemo harum nisi quas autem, voluptas ex hic error dicta qui rem, molestiae repudiandae illo consequatur. Voluptatem.</p>
+                        <label class="cancel" for="text">CANCEL</label>
+                        <label class="agree" for="text">AGREE</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const labels = document.querySelectorAll(".label");
+
+        labels.forEach(labels => {
+            labels.addEventListener("click", event => {
+
+                // const currentlyActivelabels = document.querySelector(".Label.active");
+                // if(currentlyActivelabels && currentlyActivelabels !== labels){
+                //     currentlyActivelabels.classList.toggle("active");
+                //     currentlyActivelabels.nextElementSibling.style.maxHeight = 0;
+                // }
+                
+                labels.classList.toggle("active");
+
+                const labelsbody = labels.nextElementSibling;
+                if(labels.classList.contains("active")){
+                    labelsbody.style.maxHeight = labelsbody.scrollHeight + "px";
+                }
+                else{
+                    labelsbody.style.maxHeight = 0;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
